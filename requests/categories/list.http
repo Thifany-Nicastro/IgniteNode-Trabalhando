@@ -1,0 +1,4 @@
+GET /categories HTTP/1.1
+Authorization: Bearer undefined
+Host: localhost:3333
+

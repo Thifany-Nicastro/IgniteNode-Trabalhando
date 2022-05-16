@@ -1,0 +1,11 @@
+POST /users HTTP/1.1
+Content-Type: application/json
+Host: localhost:3333
+Content-Length: 91
+
+{
+	"name": "aaa",
+	"email": "aaa@email.com",
+	"password": "123",
+	"driver_license": "abc"
+}

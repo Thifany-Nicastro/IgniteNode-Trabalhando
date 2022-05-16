@@ -1,0 +1,14 @@
+POST /cars HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTI3MjMyMDgsImV4cCI6MTY1MjgwOTYwOCwic3ViIjoiOTNlMmJjZDktOGE1OC00ZWM3LTgzYWQtOTM3YTFiYWM3NjA1In0.Imij-I37VC9kZ3eHLrmKpCopBuhI3bOoZY62j0X_ChU
+Host: localhost:3333
+Content-Length: 120
+
+{
+	"name": "aaa",
+	"description": "bbb",
+	"daily_rate": 10,
+	"license_plate": "xyz",
+	"fine_amount": 0,
+	"brand": "ccc"
+}
