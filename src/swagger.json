@@ -5,7 +5,7 @@
     "description": "This is an API Rent",
     "version": "1.0.0",
     "contact": {
-      "email": "mail@mail.com"
+      "email":"mail@email.com.br"
     }
   },
   "paths": {
@@ -13,39 +13,39 @@
       "post": {
         "tags": ["Category"],
         "summary": "Create a category",
-        "description": "Create a new category",
-        "security": [
+         "description": "Create a new category",
+         "security": [
           { "bearerAuth": []}
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "example": {
-                  "name": "Category name sample",
-                  "description": "Category description sample"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Category already exists"
-          }
-        }
+         ],
+         "requestBody": {
+           "content": {
+             "application/json": {
+               "schema": {
+                 "type": "object",
+                 "properties": {
+                   "name": {
+                     "type": "string"
+                   },
+                   "description": {
+                     "type": "string"
+                   }
+                 },
+                 "example": {
+                   "name": "category name sample",
+                   "description": "Category description sample"
+                 }
+               }
+             }
+           }
+         },
+         "responses": {
+           "201": {
+             "description": "Created"
+           },
+           "500": {
+             "description": "Category already exists"
+           }
+         }
       },
       "get": {
         "tags": ["Category"],
@@ -81,6 +81,9 @@
         "tags": ["Category"],
         "summary": "Upload a new category",
         "description": "Upload a new category",
+        "security": [
+          { "bearerAuth": []}
+         ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -105,9 +108,12 @@
     },
     "/specifications": {
       "post": {
-        "tags": ["Specification"],
+        "tags": ["Specifications"],
         "summary": "Create a specification",
         "description": "Create a new specification",
+        "security": [
+          { "bearerAuth": []}
+         ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -122,7 +128,7 @@
             "description": "Created"
           },
           "500": {
-            "description": "Specification already exists"
+            "description": "Specification already exists!"
           }
         }
       }
@@ -242,6 +248,32 @@
           "type": "string"
         }
       }
+    },
+    "Car": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "daily_rate": {
+          "type": "number"
+        },
+        "license_plate": {
+          "type": "string"
+        },
+        "fine_amount": {
+          "type": "number"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "category_id": {
+          "type": "string"
+        }
+      }
     }
   },
   "components": {
@@ -253,4 +285,5 @@
       }
     }
   }
+  
 }
