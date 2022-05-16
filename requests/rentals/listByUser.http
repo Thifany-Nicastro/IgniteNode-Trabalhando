@@ -1,0 +1,4 @@
+GET /rentals/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTI3MjQ3NjQsImV4cCI6MTY1MjgxMTE2NCwic3ViIjoiMDM0NDEyYmYtMTNjZC00NTgwLTllMmEtN2M1ZjIyNDFmM2ZlIn0.UySD1KB3XAv2m0jZSDLujh8lge5U7ikz-oQBbwVoBQA
+Host: localhost:3333
+
