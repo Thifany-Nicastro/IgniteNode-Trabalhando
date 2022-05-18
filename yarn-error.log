@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add cross-env
+  C:\Program Files\nodejs\node.exe C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/nodemailer -D
 
 PATH: 
   C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Ruby30-x64\bin;C:\Users\Raul\AppData\Local\Microsoft\WindowsApps;C:\Users\Raul\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Raul\AppData\Roaming\npm;C:\Users\Raul\AppData\Local\gitkraken\bin;C:\php8;C:\Users\Raul\AppData\Local\GitHubDesktop\bin;C:\Users\Raul\AppData\Local\ComposerSetup\bin;C:\Users\Raul\AppData\Roaming\Composer\vendor\bin
@@ -18,7 +18,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "IgniteNode-Continuando",
+    "name": "IgniteNode-Rentx",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
@@ -26,8 +26,8 @@ npm manifest:
       "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
       "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
       "docker:migration-run": "docker exec rentx yarn typeorm migration:run",
-      "test": "cross-env NODE_ENV=test jest",
-      "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts",
+      "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles",
+      "seed:admin": "ts-node-dev -r tsconfig-paths/register src/shared/infra/typeorm/seed/admin.ts",
       "container": "docker exec -it rentx /bin/bash"
     },
     "dependencies": {
@@ -35,6 +35,7 @@ npm manifest:
       "@types/jsonwebtoken": "^8.5.1",
       "bcrypt": "^5.0.1",
       "bcryptjs": "^2.4.3",
+      "cross-env": "^7.0.3",
       "csv-parse": "^4.15.3",
       "dayjs": "^1.11.2",
       "express": "^4.17.1",
@@ -1759,6 +1760,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
     integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
   
+  cross-env@^7.0.3:
+    version "7.0.3"
+    resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+    integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+    dependencies:
+      cross-spawn "^7.0.1"
+  
   cross-spawn@^6.0.0:
     version "6.0.5"
     resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
@@ -1770,7 +1778,7 @@ Lockfile:
       shebang-command "^1.2.0"
       which "^1.2.9"
   
-  cross-spawn@^7.0.0, cross-spawn@^7.0.2:
+  cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2:
     version "7.0.3"
     resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
     integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
