@@ -7,6 +7,7 @@ import { app } from "@shared/infra/http/app";
 import createConnection from "@shared/infra/typeorm";
 
 let connection: Connection;
+
 describe("Create Category Controller", () => {
   beforeAll(async () => {
     connection = await createConnection();
